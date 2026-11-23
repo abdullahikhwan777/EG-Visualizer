@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://abdullahikhwan777.github.io/EG-Visualizer/sitemap.xml
