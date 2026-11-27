@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Final 3D View | Trace</title>
+  <link rel="stylesheet" href="./final-3d/viewer.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #F7F6F0; color: #272B28; font: 400 16px/1.5 Manrope, system-ui, sans-serif; }
+    main { max-width: 1200px; margin: auto; padding: 22px clamp(12px,4vw,44px) 28px; }
+    header { display: flex; justify-content: space-between; gap: 12px; align-items: center; border-bottom: 1px solid #DCDDD2; padding-bottom: 13px; }
+    header img { display: block; width: 110px; height: auto; }
+    header a { color: #465745; font-weight: 600; font-size: 14px; }
+    h1 { margin: 0; font: 400 clamp(34px,5vw,58px)/1.05 Georgia, serif; letter-spacing: -.035em; }
+    .question-row { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 13px; padding: 19px 0 9px; }
+    label { display: grid; color: #465745; font-size: 13px; font-weight: 650; gap: 3px; }
+    #t3-validation-pick { width: min(100%,325px); min-height: 40px; padding: 5px 9px; border: 1px solid #A8B09F; border-radius: 8px; background: #FCFCF9; color: #272B28; font: inherit; }
+    .statement { margin-bottom: 12px; max-width: 84ch; }
+    .statement p { margin: 0; font-size: clamp(14px,2.2vw,16px); }
+    @media (max-width: 600px) { main { padding-top: 13px; } .question-row { padding-top: 13px; } #t3-validation-pick { min-height: 44px; } }
+  </style>
+  <script type="module" src="./final-3d/viewer.mjs"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="./final-3d/trace-mark.png" alt="Trace">
+      <a href="./">Open Trace workspace</a>
+    </header>
+    <div class="question-row">
+      <h1>Final 3D View</h1>
+      <label for="t3-validation-pick">Module II · Projections of Solids
+        <select id="t3-validation-pick">
+          <option value="1">Q1 · Square pyramid on a slant edge</option>
+          <option value="2">Q2 · Square pyramid on a base edge</option>
+          <option value="3">Q3 · Cube with a vertical diagonal</option>
+          <option value="4">Q4 · Cube with a horizontal diagonal</option>
+          <option value="5">Q5 · Cube with a 60 mm diagonal</option>
+        </select>
+      </label>
+    </div>
+    <div class="statement">
+      <p data-statement="1">Draw the projections of a square pyramid of base side 30 mm and altitude 60 mm when it lies on the ground on one of its slant edges with the axis parallel to the VP.</p>
+      <p data-statement="2" hidden>Draw the projections of a square pyramid of base side 30 mm and altitude 60 mm when it rests on the ground on one of its base edges perpendicular to the VP and the triangular face containing the resting edge perpendicular to the VP and HP.</p>
+      <p data-statement="3" hidden>Draw the projections of a cube of 40 mm edge resting on HP on one of its corner with a solid diagonal vertical.</p>
+      <p data-statement="4" hidden>A cube of side 40 mm has one of its solid diagonals parallel to HP and perpendicular to VP. Draw its projections when it rests on HP.</p>
+      <p data-statement="5" hidden>A cube of solid diagonal 60 mm has one of its solid diagonals parallel to HP and perpendicular to VP. Draw its projections when it rests on HP. Find the length of the cube’s side.</p>
+    </div>
+    <trace-final-view module="II" question="1" presentation="standalone"></trace-final-view>
+  </main>
+</body>
+</html>
